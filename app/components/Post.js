@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 export default function Post({ title, url, author, comments }) {
   return (
-    <li>
-      <a href={url}>{title}</a>
-      <p>
+    <li className="post">
+      <a href={url} className="post__title">
+        {title}
+      </a>
+      <p className="post__description">
         by {author}, with {comments} comments
       </p>
     </li>

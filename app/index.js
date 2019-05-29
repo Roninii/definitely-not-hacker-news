@@ -7,9 +7,9 @@ import Home from './components/Home';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <main>
         <Home />
-      </div>
+      </main>
     );
   }
 }

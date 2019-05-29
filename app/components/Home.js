@@ -21,6 +21,7 @@ export default class Home extends React.Component {
       })
       .catch(err => {
         this.setState({ error: `There was a problem fetching ${this.state.showing} posts` });
+        console.log(err);
       });
   }
 
