@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
+import Home from './components/Home';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hacker News Clone</h1>
+        <Home />
       </div>
     );
   }
