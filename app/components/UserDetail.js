@@ -56,6 +56,7 @@ export default class UserDetail extends React.Component {
               posts.map(post => (
                 <Post
                   key={post.id}
+                  id={post.id}
                   title={post.title}
                   url={post.url}
                   author={post.by}
