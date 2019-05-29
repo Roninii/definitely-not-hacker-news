@@ -25,16 +25,42 @@ export default class Home extends React.Component {
       });
   }
 
+  handleToggle = id => {
+    this.setState({ showing: id, posts: [] });
+
+    fetchMainPosts(this.state.showing)
+      .then(res => {
+        this.setState({ posts: res });
+      })
+      .catch(err => {
+        this.setState({
+          error: `There was a problem fetching ${this.state.showing} posts`,
+        });
+        console.log(err);
+      });
+  };
+
   render() {
     const { showing, posts, error } = this.state;
 
     if (error) return <h1>{error}</h1>;
 
     return (
-      <section>
-        <h1>Showing {showing} posts</h1>
+      <section className="container">
+        <div className="home-toggle">
+          <button
+            className={`home-toggle__btn ${showing === 'top' && 'active'}`}
+            onClick={() => this.handleToggle('top')}>
+            Top
+          </button>
+          <button
+            className={`home-toggle__btn ${showing === 'new' && 'active'}`}
+            onClick={() => this.handleToggle('new')}>
+            New
+          </button>
+        </div>
         <ul>
-          {posts.length &&
+          {posts.length > 0 &&
             posts.map(post => (
               <Post
                 key={post.id}

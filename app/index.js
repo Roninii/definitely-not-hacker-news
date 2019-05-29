@@ -8,6 +8,9 @@ class App extends React.Component {
   render() {
     return (
       <main>
+        <h1 className="page-title">
+          Definitely <span className="page-title--accent">Not</span> Hacker News
+        </h1>
         <Home />
       </main>
     );
