@@ -2,6 +2,7 @@ import React from 'react';
 
 import { fetchMainPosts } from '../utils/api';
 import Post from './Post';
+import Loading from './Loading';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -60,16 +61,20 @@ export default class Home extends React.Component {
           </button>
         </div>
         <ul>
-          {posts.length > 0 &&
+          {posts.length > 0 ? (
             posts.map(post => (
               <Post
                 key={post.id}
+                id={post.id}
                 title={post.title}
                 url={post.url}
                 author={post.by}
                 comments={post.descendants}
               />
-            ))}
+            ))
+          ) : (
+            <Loading />
+          )}
         </ul>
       </section>
     );

@@ -24,9 +24,29 @@ li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* utilities */
+
 .container {
-  max-width: 75vw;
-  margin: 0 auto;
+  max-width: 60vw;
+  margin: 5rem auto;
+}
+
+.accent {
+  color: var(--purple);
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 700;
+}
+
+.nav-link {
+  color: var(--dark-grey);
 }
 
 .page-title {
@@ -34,10 +54,6 @@ li {
   font-size: 2.5rem;
   letter-spacing: 0.5rem;
   text-align: center;
-}
-
-.page-title--accent {
-  color: var(--purple);
 }
 
 .post {
